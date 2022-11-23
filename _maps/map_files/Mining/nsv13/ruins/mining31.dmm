@@ -1,0 +1,84 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"b" = (/obj/machinery/suit_storage_unit/open,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"c" = (/obj/effect/spawner/structure/window/plasma/reinforced,/turf/open/floor/plating,/area/ruin/powered)
+"d" = (/obj/machinery/door/airlock/ship/external/glass,/obj/effect/mapping_helpers/airlock/cyclelink_helper,/turf/open/floor/plating,/area/ruin/powered)
+"e" = (/obj/machinery/light/small{bulb_colour = "#FF0000"; bulb_emergency_colour = "#FF0000"; bulb_vacuum_colour = "#FF0000"; nightshift_light_color = "#FF0000"},/turf/open/floor/plating/asteroid/airless,/area/ruin/powered)
+"f" = (/obj/structure/railing/corner{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"g" = (/obj/machinery/telecomms/relay/preset/ruskie{use_power = 0},/obj/machinery/light/small,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"h" = (/obj/machinery/shower{dir = 4; pixel_y = -6},/obj/structure/curtain,/obj/item/soap,/obj/structure/window{dir = 4},/turf/open/floor/plasteel/showroomfloor,/area/ruin/powered)
+"i" = (/obj/effect/landmark/dropship_entry,/turf/template_noop,/area/template_noop)
+"j" = (/obj/structure/table/wood,/obj/item/paper/fluff/ruins/listeningstation/briefing{info = "<b>Mission Details</b>: You have been assigned to a newly constructed listening post constructed within an asteroid to monitor Nanotrasen ship movements. Accurate intel is crucial to the success of our fleets, do not fail us."},/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"k" = (/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"m" = (/obj/structure/railing{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"n" = (/mob/living/carbon/human/ai_boarder/syndicate,/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"o" = (/obj/effect/landmark/patrol_node{id = "ruin_break"; next_id = "ruin_tcomms"},/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"p" = (/obj/machinery/light/small{bulb_colour = "#FF0000"; bulb_emergency_colour = "#FF0000"; bulb_vacuum_colour = "#FF0000"; nightshift_light_color = "#FF0000"; dir = 8},/turf/template_noop,/area/template_noop)
+"q" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"s" = (/turf/closed/wall/mineral/plastitanium,/area/ruin/powered)
+"u" = (/turf/open/floor/plating/asteroid/airless,/area/ruin/powered)
+"v" = (/obj/item/storage/firstaid/regular,/obj/effect/spawner/lootdrop/ruinloot/medical,/obj/structure/table/wood,/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"w" = (/turf/closed/mineral,/area/ruin/powered)
+"y" = (/obj/structure/sink{dir = 4; pixel_x = 11},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ruin/powered)
+"A" = (/obj/structure/table/reinforced,/obj/machinery/computer/libraryconsole/bookmanagement,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"C" = (/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"E" = (/obj/machinery/computer/camera_advanced,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"G" = (/obj/structure/fluff/empty_sleeper{dir = 8; icon_state = "sleeper_s-open"},/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"H" = (/obj/machinery/microwave,/obj/structure/table/wood,/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"I" = (/obj/structure/closet/crate/bin,/obj/effect/spawner/lootdrop/ruinloot/basic,/obj/effect/spawner/lootdrop/ruinloot/science,/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"J" = (/obj/structure/stairs{dir = 8},/obj/structure/railing{dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"K" = (/obj/structure/sign/poster/contraband/syndicate_recruitment{pixel_x = 4},/turf/closed/wall/mineral/plastitanium,/area/ruin/powered)
+"N" = (/obj/machinery/door/airlock/ship/external/glass,/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 1},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ruin/powered)
+"O" = (/obj/structure/chair/office{dir = 4},/obj/effect/landmark/patrol_node{id = "ruin_tcomms"; next_id = "ruin_break"},/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"P" = (/obj/machinery/computer/med_data/syndie{req_one_access = null},/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"Q" = (/obj/item/storage/box/donkpockets{pixel_x = 4; pixel_y = 4},/obj/item/reagent_containers/food/drinks/beer{pixel_x = -8; pixel_y = 4},/obj/structure/table/wood,/obj/machinery/light/small{dir = 8; pixel_y = 10},/obj/effect/spawner/lootdrop/ruinloot/basic,/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"R" = (/obj/structure/toilet{dir = 4},/obj/machinery/door/window/eastleft,/turf/open/floor/plasteel/showroomfloor,/area/ruin/powered)
+"S" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"T" = (/obj/structure/rack{dir = 8; layer = 2.9},/obj/item/pickaxe,/obj/item/mining_scanner,/obj/item/tank/internals/oxygen,/obj/effect/spawner/lootdrop/ruinloot/basic,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"U" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/plating,/area/ruin/powered)
+"W" = (/obj/machinery/computer/message_monitor{dir = 1},/obj/item/paper/monitorkey,/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+"X" = (/obj/structure/sign/poster/contraband/syndicate_recruitment{pixel_x = 5},/turf/closed/wall/mineral/plastitanium,/area/ruin/powered)
+"Y" = (/obj/machinery/vending/donksofttoyvendor,/turf/open/floor/plasteel/dark,/area/ruin/powered)
+"Z" = (/obj/structure/railing{dir = 8},/turf/open/floor/mineral/plastitanium/red{initial_gas_mix = "o2=22;n2=82;TEMP=293.15"},/area/ruin/powered)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaawwwwwwwaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaawwwwwwwwwaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaawwwwwwwwwwwwaaaaaaaaaaaaaa
+aaaaaaaaaaawwwwwwwwwwwwwwwwwwuaaaaaaaaaa
+aaaaaaaaaaawwwwwwwwwwwwwwwwuuuuaaaaaaaaa
+aaaaaaaaaaawwwwwwwwwwwwwwwuuwwuuaaaaaaaa
+aaaaaaaaaawwwwwwwwwwwwwwwwwuuuuuaaaaaaaa
+aaaaaaaaawwwwwwwwwwwwwwwwwwuwwwuuaaaaaaa
+aaaaaaaawwwwwwwwwwwwwwwwwweuewwwwaaaaaaa
+aaaaaaaawwwwwwwwwwwwwwwwwsXdKwwwwaaaaaaa
+aaaaaaaawwwwwwwwwwwwwwwwwsRUswwwwaaaaaaa
+aaaaaaaawwwwwwwwwwwwwwwwwshyswwwwaaaaaaa
+aaaaaaaawwwwwwwwwwwwwwwssssNswwwaaaaaaaa
+aaaaaaaawwwwwwwwwwwwwwwsISYmssssspaaaaaa
+aaaaaaaawwwwwwwwwwwwwwwsHojZTbPEcaaaaaaa
+aaaaaaawwwwwwwwwwwwwwwwsQnGmCqqOcaaaaaaa
+aaaaaaawwwwwwwwwwwwwwwwsvkJfqAgWcaaaaaaa
+aaaaaaawwwwwwwwwwwwwwwwsssssssssspaaaaaa
+aaaaaawwwwwwwwwwwwwwwwwwwwwwwwwaaaaaaaaa
+aaaaaawwwwwwwwwwwwwwwwwwwwwwwwwaaaaaaaaa
+aaaaaaawwwwwwwwwwwwwwwwwwwwwwwwaaaaaaaaa
+aaaaaaawwwwwwwwwwwwwwwwwwwwwwwaaaaaaaaaa
+aaaaaaawwwwwwwwwwwwwwwwwwwwwwwaaaaaaaaaa
+aaaaaaaaawwwwwwwwwwwwwwwwwwwwwaaaaaaaaaa
+aaaaaaaaaaaawwwwwwwwwwwwwwwwwaaaaaaaaaaa
+aaaaaaaaaaaaaaaawwwwwwwwwwwaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaawwwwwwaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}

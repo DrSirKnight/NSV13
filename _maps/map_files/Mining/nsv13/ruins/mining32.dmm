@@ -1,0 +1,68 @@
+"a" = (/turf/template_noop,/area/template_noop)
+"c" = (/obj/machinery/door/airlock/ship/external/glass,/turf/open/floor/monotile,/area/ruin/powered)
+"e" = (/turf/closed/mineral,/area/ruin/powered)
+"f" = (/obj/effect/landmark/dropship_entry,/turf/template_noop,/area/template_noop)
+"g" = (/obj/machinery/light/small{dir = 8},/turf/open/floor/monotile,/area/ruin/powered)
+"j" = (/obj/machinery/vending/hydronutrients,/turf/open/floor/monotile,/area/ruin/powered)
+"m" = (/obj/machinery/hydroponics/constructable,/obj/item/seeds/lavaland/cactus,/turf/open/floor/monotile,/area/ruin/powered)
+"n" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/plating/asteroid/airless,/area/ruin/powered)
+"o" = (/obj/structure/spacevine,/turf/open/floor/monotile,/area/ruin/powered)
+"q" = (/obj/structure/closet/secure_closet/hydroponics{anchored = 1},/obj/item/seeds/random,/obj/item/seeds/random,/turf/open/floor/monotile,/area/ruin/powered)
+"t" = (/obj/machinery/door/airlock/ship/external/glass,/turf/closed/wall,/area/ruin/powered)
+"u" = (/obj/structure/sign/poster/contraband/kudzu,/turf/closed/wall,/area/ruin/powered)
+"v" = (/obj/machinery/biogenerator,/turf/open/floor/monotile,/area/ruin/powered)
+"z" = (/obj/structure/reagent_dispensers/watertank/high,/turf/open/floor/monotile,/area/ruin/powered)
+"B" = (/obj/machinery/hydroponics/constructable,/obj/item/seeds/random,/obj/machinery/light/small{dir = 4},/turf/open/floor/monotile,/area/ruin/powered)
+"D" = (/turf/closed/wall,/area/ruin/powered)
+"E" = (/turf/open/floor/plating/asteroid/airless,/area/ruin/powered)
+"J" = (/obj/structure/spacevine,/turf/open/floor/plating/asteroid/airless,/area/ruin/powered)
+"K" = (/obj/machinery/hydroponics/constructable,/obj/structure/spacevine,/turf/open/floor/monotile,/area/ruin/powered)
+"N" = (/obj/structure/table/glass,/obj/machinery/plantgenes{pixel_y = 6},/turf/open/floor/monotile,/area/ruin/powered)
+"S" = (/mob/living/simple_animal/hostile/venus_human_trap,/turf/open/floor/monotile,/area/ruin/powered)
+"U" = (/obj/machinery/vending/hydroseeds{slogan_delay = 700},/turf/open/floor/monotile,/area/ruin/powered)
+"V" = (/obj/machinery/hydroponics/constructable,/obj/item/seeds/random,/turf/open/floor/monotile,/area/ruin/powered)
+"W" = (/obj/machinery/seed_extractor,/turf/open/floor/monotile,/area/ruin/powered)
+"X" = (/turf/open/floor/monotile,/area/ruin/powered)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaeeeaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaeeeeeeeeaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaeeeeeeeeeeeaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaeeeeeeeeeeeeaaaaaaaaaaaa
+aaaaaaaaaaaaaaaeeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaaaaaaaaeeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaaaaaaaaeeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaaaaaaaeeeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaaaaaaeeeeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaaaaaeeeeeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaeeeeeeeeeeeeeeeeeeeeeeaaaaaaaaaa
+aaaaaaaeeeeeeeeeeeeeeeeeeeeeeeaaaaaaaaaa
+aaaaaaeeeeeeeeeeDDDDDDeeeeeeeeeeaaaaaaaa
+aaaaaaeeeeeeeeeDDvWUjDDeeeeeeeeeeeaaaaaa
+aaaaaaeeeeeeeeeDNXXXXKDeeeeeeeeeeeaaaaaa
+aaaaaaeeeeeeeeeDXXSzXBDeeeeeeeeeeeaaaaaa
+aaaaaaeeeeeeeeeDcDXqXVDeeeeeeeeeeeaaaaaa
+aaaaaaeeeeeeeeeDoDgXXmDeeeeeeeeeeeaaaaaa
+aaaaaaaeeeeeeeeutDKVVDDeeeeeeeeeeaaaaaaa
+aaaaaaaeeeeeeeEEJDDDDDeeeeeeeeeeaaaaaaaa
+aaaaaaaaeeeeeeEEEnEEeeeeeeeeeeeeaaaaaaaa
+aaaaaaaaeeeeeeeeeEeeeeeeeeeeeeeaaaaaaaaa
+aaaaaaaeeeeeeeeeeeeeeeeeeeeeeeeaaaaaaaaa
+aaaaaaaeeeeeeeeEJeeeeeeeeeeeeeaaaaaaaaaa
+aaaaaaeeeeeeeeeeeeeeeeeeeeeeeeaaaaaaaaaa
+aaaaaaeeeeeeeeeEeeeeeeeeeeeeeeaaaaaaaaaa
+aaaaaaaeeeeeeEeeeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaeeeeEEEJEeeeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaaeeaaEEEEEeeeeeeeeeeeaaaaaaaaaaa
+aaaaaaaaaaaaaaEEEaeeeeeeeeeeeaaaaaaaaaaa
+aaaaafaaaaaaaEEaEaaaaeeeeeeeeeaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaeeeeeeeeaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaeeeeeeeeaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaeeaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}
