@@ -840,6 +840,17 @@ Adding tasks is easy! Just define a datum for it.
 
 //Boss battles.
 
+/datum/fleet/wizard/castle
+	name = "Lone Castle"
+	size = FLEET_DIFFICULTY_VERY_HARD
+	fighter_types = list(/obj/structure/overmap/wizard/ai/lone)
+	destroyer_types = null
+	supply_types = null
+	battleship_types = list(/obj/structure/overmap/wizard/ai/castle)	//:)
+	audio_cues = list()
+	allow_difficulty_scaling = FALSE
+	taunts = list("#!=?")
+
 /datum/fleet/rubicon //Crossing the rubicon, are we?
 	name = "\proper Rubicon Crossing"
 	size = FLEET_DIFFICULTY_VERY_HARD
@@ -1637,6 +1648,10 @@ Seek a ship thich we'll station ourselves around
 	var/max_tracking_range = 50//50, 100 when pinging - Range that AI ships can hunt you down in. The amounts to almost half the Z-level.
 	var/obj/structure/overmap/defense_target = null
 	var/ai_can_launch_fighters = FALSE //AI variable. Allows your ai ships to spawn fighter craft
+	var/fighter_base_deploy_time = 60 // Base time between launching fighters
+	var/fighter_deploy_interval = 60 // Additional time we wait between launches per fighter. So if a ship launches 3 fighters that's 60 + 3*60 seconds
+	var/min_amount_of_fighters_deployed = 2 // Picks an amount of fighters to deploy from this range
+	var/max_amount_of_fighters_deployed = 3
 	var/list/ai_fighter_type = list()
 	var/ai_flags = AI_FLAG_DESTROYER
 	///Overmap bitflags
@@ -1956,7 +1971,7 @@ Seek a ship thich we'll station ourselves around
 		ai_can_launch_fighters = FALSE
 		var/cancelled = FALSE
 		if(ai_fighter_type.len)
-			for(var/i = 0, i < rand(2,3), i++)
+			for(var/i = 0, i < rand(min_amount_of_fighters_deployed,max_amount_of_fighters_deployed), i++)
 				var/ai_fighter = pick(ai_fighter_type)
 				var/turf/launch_turf = get_turf(pick(orange(3, src)))
 				if(!launch_turf)
@@ -1964,7 +1979,7 @@ Seek a ship thich we'll station ourselves around
 					if(!i)
 						ai_can_launch_fighters = TRUE
 					else
-						addtimer(VARSET_CALLBACK(src, ai_can_launch_fighters, TRUE), (1 + i) MINUTES)
+						addtimer(VARSET_CALLBACK(src, ai_can_launch_fighters, TRUE), (fighter_base_deploy_time + fighter_deploy_interval*i) SECONDS)
 					break
 				var/obj/structure/overmap/newFighter = new ai_fighter(launch_turf)
 				newFighter.last_target = last_target
@@ -1981,7 +1996,7 @@ Seek a ship thich we'll station ourselves around
 
 				relay_to_nearby('nsv13/sound/effects/ship/fighter_launch_short.ogg')
 		if(!cancelled)
-			addtimer(VARSET_CALLBACK(src, ai_can_launch_fighters, TRUE), 3 MINUTES)
+			addtimer(VARSET_CALLBACK(src, ai_can_launch_fighters, TRUE), fighter_base_deploy_time + fighter_deploy_interval*2 SECONDS)
 	if(OM in enemies) //If target's in enemies, return
 		return
 	enemies += target

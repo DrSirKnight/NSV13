@@ -634,6 +634,86 @@ Misc projectile types, effects, think of this as the special FX file.
 	armour_penetration = 10
 	speed = 0.4
 
+/obj/item/projectile/magic/overmap
+	name = "bolt of magic"
+	icon_state = "energy"
+	damage = 50
+	damage_type = BRUTE
+	nodamage = FALSE
+	armour_penetration = 2
+
+/obj/item/projectile/magic/overmap/fireball
+	name = "fireball"
+	icon_state = "fireball"
+	damage = 50
+
+/obj/item/projectile/guided_munition/magic_missile
+	name = "magic missile"
+	icon_state = "magicm"
+	damage = 20
+	speed = 2
+	valid_angle = 150
+	homing_turn_speed = 90
+	obj_integrity = 10
+	max_integrity = 10
+	armor = list("overmap_light" = 20, "overmap_medium" = 10, "overmap_heavy" = 0)
+	flag = "overmap_light"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/torpedo
+	spread = 5
+	range = 250
+
+/obj/item/projectile/guided_munition/magic_missile/detonate(atom/target)
+
+/obj/item/projectile/magic/overmap/rod
+	name = "movable immovable rod"
+	icon = 'nsv13/icons/obj/projectiles_nsv.dmi'
+	icon_state = "mac"
+	damage = 500
+	armour_penetration = 100
+	projectile_piercing = ALL
+	range = 255
+	speed = 1.85
+
+/obj/item/projectile/magic/overmap/star
+	name = "Star"
+	desc = "A huge ball of burning hydrogen that lights up space around it. It seems to be rapidly approaching you, moving out of the way would be a good idea."
+	icon = 'nsv13/icons/obj/projectiles_nsv_magic.dmi'
+	icon_state = "star"
+	speed = 1
+	damage = 1000
+	armour_penetration = 30
+	range = 100
+
+	impact_effect_type = /obj/effect/temp_visual/nuke_impact
+	relay_projectile_type = /obj/item/projectile/bullet/delayed_prime/relayed_incendiary_torpedo/star
+
+	can_home = TRUE
+	homing_turn_speed = 2.5
+
+/obj/item/projectile/magic/overmap/star/spec_overmap_hit(obj/structure/overmap/target)
+	. = ..()
+	var/z_levels = target.occupying_levels
+	if(length(z_levels)) // If we have an internal z
+		for(var/datum/space_level/level in z_levels)
+			var/z_value = level.z_value
+			for(var/mob/living/M in GLOB.mob_living_list) // Let em burn \o/
+				if(M.z == z_value)
+					M.fire_stacks += 20
+					M.IgniteMob()
+
+/obj/item/projectile/bullet/delayed_prime/relayed_incendiary_torpedo/star
+	icon = 'nsv13/goonstation/icons/effects/overmap_anomalies/stellarbodies.dmi'
+	icon_state = "sun"
+	name = "Star"
+	penetration_fuze = 2
+
+/obj/item/projectile/bullet/delayed_prime/relayed_incendiary_torpedo/star/release_payload(atom/detonation_location)
+	var/turf/detonation_turf = detonation_location
+	explosion(detonation_turf, 0, 0, 4, 7, flame_range = 4)
+	detonation_turf.atmos_spawn_air("tritium=500;TEMP=5000")
+
+
+
 /obj/effect/temp_visual/overmap_explosion
 	icon = 'nsv13/goonstation/icons/hugeexplosion.dmi'
 	icon_state = "explosion"

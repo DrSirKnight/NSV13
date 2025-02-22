@@ -401,4 +401,80 @@
 	overmap_select_sound = 'nsv13/sound/weapons/bsa_select.ogg'
 	ai_fire_delay = 32 SECONDS
 
+/datum/ship_weapon/fireball
+	name = "fireball spell"
+	default_projectile_type = /obj/item/projectile/magic/overmap/fireball
+	burst_size = 1
+	fire_delay = 0.25 SECONDS
+	range_modifier = 10
+	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
+	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
+	select_alert = "<span class='notice'>Primary mount selected.</span>"
+	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
+
+	weapon_class = WEAPON_CLASS_LIGHT
+	lateral = FALSE
+
+/datum/ship_weapon/magic_missile
+	name = "magic missile spell"
+	default_projectile_type = /obj/item/projectile/guided_munition/magic_missile
+	burst_size = 3
+	fire_delay = 2 SECONDS
+	range_modifier = 10
+	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
+	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
+	select_alert = "<span class='notice'>Primary mount selected.</span>"
+	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
+
+	weapon_class = WEAPON_CLASS_LIGHT
+	lateral = FALSE
+
+/datum/ship_weapon/immovable_rod
+	name = "rod form apprentice wizard"
+	default_projectile_type = /obj/item/projectile/magic/overmap/rod
+	fire_delay = 30 SECONDS
+	range_modifier = 200
+	overmap_firing_sounds = list('nsv13/sound/weapons/bsa_fire.ogg')
+	overmap_select_sound = 'nsv13/sound/weapons/bsa_select.ogg'
+	select_alert = "<span class='notice'>Primary mount selected.</span>"
+	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
+
+	weapon_class = WEAPON_CLASS_HEAVY
+	lateral = FALSE
+
+/datum/ship_weapon/touhou
+	name = "bullet hell circle"
+	default_projectile_type = /obj/item/projectile/magic/overmap/fireball
+	burst_size = 10
+	fire_delay = 2 SECONDS
+	range_modifier = 100
+	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
+	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
+	select_alert = "<span class='notice'>Primary mount selected.</span>"
+	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
+	weapon_class = WEAPON_CLASS_LIGHT
+	lateral = FALSE
+	special_fire_proc = /obj/structure/overmap/proc/fire_bullethell
+
+/datum/ship_weapon/immovable_rod/valid_target(obj/structure/overmap/source, obj/structure/overmap/target, override_mass_check = FALSE)
+	if(!istype(source) || !istype(target))
+		return FALSE
+	if(!override_mass_check && target.mass <= MASS_TINY) //Alright fighter mains. I'm not THAT much of a bastard. Generally AIs will prefer to not use their MAC for flyswatting.
+		return FALSE
+	return TRUE
+
+/datum/ship_weapon/star
+	name = "star"
+	default_projectile_type = /obj/item/projectile/magic/overmap/star
+	burst_size = 1
+	fire_delay = 30 SECONDS
+	range_modifier = 200
+	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
+	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
+	select_alert = "<span class='notice'>Primary mount selected.</span>"
+	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
+	weapon_class = WEAPON_CLASS_HEAVY
+	lateral = FALSE
+	hail_messages = list("BEHOLD, MORTALS! I GIFT YOU A SUN!", "HYDROGEN TO HELIUM, SHIP TO DUST!", "A STAR FOR A STARSHIP? HOW FITTING!", "I PLUCKED THIS FROM THE SKIES JUST FOR YOU!", "THE SKY LOSES A STAR, AND YOU LOSE EVERYTHING!")
+
 

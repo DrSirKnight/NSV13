@@ -31,6 +31,7 @@
 	var/autonomous = FALSE // Is this a gun that can automatically fire? Keep in mind variables selectable and autonomous can both be TRUE
 	var/permitted_ams_modes = list( "Anti-ship" = 1, "Anti-missile countermeasures" = 1 ) // Overwrite the list with a specific firing mode if you want to restrict its targets
 	var/allowed_roles = OVERMAP_USER_ROLE_GUNNER
+	var/list/hail_messages = list()
 
 	var/next_firetime = 0
 
@@ -64,6 +65,11 @@
 	if(fire_delay)
 		next_firetime = world.time + fire_delay
 	if(!requires_physical_guns)
+		if(hail_messages.len) // Let the villain monologue before shooting
+			var/obj/structure/overmap/enemy_ship = target
+			var/message = pick(hail_messages)
+			enemy_ship.hail(message, holder)
+			sleep(10)
 		if(special_fire_proc)
 			call_async(source=holder, proctype=special_fire_proc, arguments=list(target=target, ai_aim=ai_aim, burst=burst_size)) //WARNING: The default behaviour of this proc will ALWAYS supply the target method with the parameter "target". Override this proc if your thing doesnt have a target parameter!
 		else
@@ -125,7 +131,6 @@
 	if(!leftovers.len) //fuck I ate a pizza and there's no leftovers; shaking and crying
 		return FALSE //Can't fire any of the shot. Otherwise, we may be able to get a partial burst out, which counts as a fire in my book!
 	for(var/obj/machinery/ship_weapon/SW in leftovers)
-		sleep(1)
 		SW.fire(target, shots = 1)
 	if(screen_shake)
 		holder.shake_everyone(screen_shake)

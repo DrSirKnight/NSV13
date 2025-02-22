@@ -127,7 +127,7 @@ Set up relationships.
 	name = "Nanotrasen"
 	desc = "Nanotrasen systems is a conglomerate of sub-contractors and other companies."
 	preset_allies = list(FACTION_ID_SOLGOV, FACTION_ID_UNATHI)
-	preset_enemies = list(FACTION_ID_SYNDICATE, FACTION_ID_PIRATES)
+	preset_enemies = list(FACTION_ID_SYNDICATE, FACTION_ID_PIRATES, FACTION_ID_WIZARD)
 	fleet_types = list(/datum/fleet/nanotrasen/light = 1)
 	elite_fleet_types = list(/datum/fleet/nanotrasen = 1)
 	fleet_spawn_rate = 40 MINUTES
@@ -175,3 +175,10 @@ Set up relationships.
 	preset_enemies = list(FACTION_ID_NT)
 	fleet_types = list(/datum/fleet/pirate/scout = 1, /datum/fleet/pirate/raiding = 1)
 	id = FACTION_ID_PIRATES
+
+/datum/faction/wizard
+	name = "Space Wizard Federation"
+	desc = "An organized guild of those capable of manipulating arcane energies. With no formal allegiances, they are often perceived by outsiders as agents of chaos."
+	preset_enemies = list(FACTION_ID_NT, FACTION_ID_SYNDICATE, FACTION_ID_PIRATES, FACTION_ID_SOLGOV, FACTION_ID_UNATHI)
+	id = FACTION_ID_WIZARD
+	fleet_types = list(/datum/fleet/wizard/castle = 1)

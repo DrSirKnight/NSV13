@@ -128,3 +128,17 @@
 		var/datum/ship_weapon/SW = weapon_types[FIRE_MODE_MISSILE]
 		relay_to_nearby(pick(SW.overmap_firing_sounds))
 		return TRUE
+
+/obj/structure/overmap/proc/fire_bullethell(atom/target, ai_aim = FALSE, burst = 10, offset = 0, invert = 1, waitbetween = 0)
+	var/firing_angle = 360/burst
+	for(var/cycle = 1; cycle <= burst; cycle++)
+		sleep(waitbetween)
+		if(QDELETED(src))	//We might get shot.
+			return
+		if(QDELETED(target))
+			target = null
+		var/proj_angle = firing_angle * cycle + offset * invert
+		fire_projectile(/obj/item/projectile/magic/overmap/fireball, target, lateral = FALSE, ai_aim = ai_aim, bullethell = TRUE, bullethell_angle = proj_angle)
+		var/datum/ship_weapon/SW = weapon_types[FIRE_MODE_TORPEDO]
+		relay_to_nearby(pick(SW.overmap_firing_sounds))
+	return TRUE
