@@ -723,3 +723,10 @@ Misc projectile types, effects, think of this as the special FX file.
 	icon = 'nsv13/goonstation/icons/hugeexplosion2.dmi'
 	icon_state = "explosion"
 	duration = 10
+
+/obj/item/projectile/magic/overmap/arcane // Bullethell attacks
+	name = "arcane bolt"
+	icon_state = "arcane_barrage"
+	damage = 100
+	speed = 0.5
+

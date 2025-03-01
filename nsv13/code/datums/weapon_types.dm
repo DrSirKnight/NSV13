@@ -444,9 +444,9 @@
 
 /datum/ship_weapon/touhou
 	name = "bullet hell circle"
-	default_projectile_type = /obj/item/projectile/magic/overmap/fireball
-	burst_size = 10
-	fire_delay = 2 SECONDS
+	default_projectile_type = /obj/item/projectile/magic/overmap/arcane
+	burst_size = 5
+	fire_delay = 1 SECONDS
 	range_modifier = 100
 	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
 	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
@@ -455,6 +455,11 @@
 	weapon_class = WEAPON_CLASS_LIGHT
 	lateral = FALSE
 	special_fire_proc = /obj/structure/overmap/proc/fire_bullethell
+
+/datum/ship_weapon/touhou/dir
+	name = "bullet hell cone"
+	special_fire_proc = /obj/structure/overmap/proc/fire_bullethell_directional
+	burst_size = 5
 
 /datum/ship_weapon/immovable_rod/valid_target(obj/structure/overmap/source, obj/structure/overmap/target, override_mass_check = FALSE)
 	if(!istype(source) || !istype(target))

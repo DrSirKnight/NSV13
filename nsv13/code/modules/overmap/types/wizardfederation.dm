@@ -93,7 +93,7 @@
 	ai_fighter_type = list(/obj/structure/overmap/wizard/ai/lone)
 
 /obj/structure/overmap/wizard/ai/castle/apply_weapons()
-	weapon_types[FIRE_MODE_TORPEDO] = new/datum/ship_weapon/touhou(src)
+	weapon_types[FIRE_MODE_TORPEDO] = new/datum/ship_weapon/touhou/dir(src)
 	//weapon_types[FIRE_MODE_MAC] = new/datum/ship_weapon/immovable_rod(src)
 	weapon_types[FIRE_MODE_MAC] = new/datum/ship_weapon/star(src)
 	//The bigger the ship, the tankier the shields....
