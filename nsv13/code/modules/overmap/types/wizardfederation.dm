@@ -33,11 +33,11 @@
 /obj/structure/overmap/wizard/ai/lone // Lone wizard flying through space
 	name = "Wizard"
 	icon = 'nsv13/icons/overmap/new/wizard/wizard_fighter_overmap.dmi'
-	icon_state = "fighter_wizard"
+	icon_state = "blue"
 	damage_states = FALSE
 	brakes = FALSE
-	obj_integrity = 25
-	max_integrity = 25
+	obj_integrity = 50
+	max_integrity = 50
 	sprite_size = 48
 	faction = "wizard"
 	mass = MASS_TINY
@@ -55,15 +55,15 @@
 /obj/structure/overmap/wizard/ai/lone/apply_weapons()
 	weapon_types[FIRE_MODE_ANTI_AIR] = new/datum/ship_weapon/fireball(src)
 	weapon_types[FIRE_MODE_MISSILE] = new/datum/ship_weapon/magic_missile(src)
-	//The bigger the ship, the tankier the shields....
-	AddComponent(/datum/component/overmap_shields, 900, 900, 30)
+	AddComponent(/datum/component/overmap_shields, 100, 100, 10)
 
 /obj/structure/overmap/wizard/ai/lone/Initialize(mapload)
 	. = ..()
 	var/wizard_name_first = pick(GLOB.wizard_first)
 	var/wizard_name_second = pick(GLOB.wizard_second)
-	var/randomname = "[wizard_name_first] [wizard_name_second]"
+	var/randomname = "[wizard_name_first] [wizard_name_second]" // Randomly generated wizard names!
 	name = randomname
+	icon_state = pick("blue", "red", "yellow", "violet", "marisa")
 
 /obj/structure/overmap/wizard/ai/castle // Appears solo, uses fighters (lone wizards) as reinforcements
 	name = "Space Wizard Federation Castle"
@@ -85,16 +85,18 @@
 	armor = list("overmap_light" = 95, "overmap_medium" = 80, "overmap_heavy" = 45)
 
 	ai_can_launch_fighters = TRUE //AI variable. Allows your ai ships to spawn fighter
-	min_amount_of_fighters_deployed = 1
-	max_amount_of_fighters_deployed = 1
+	min_amount_of_fighters_deployed = 3
+	max_amount_of_fighters_deployed = 5
 	fighter_base_deploy_time = 30
-	fighter_deploy_interval = 30
+	fighter_deploy_interval = 5 // Wizards are squishy, but there'll be a lot of them
+
 
 	ai_fighter_type = list(/obj/structure/overmap/wizard/ai/lone)
+
 
 /obj/structure/overmap/wizard/ai/castle/apply_weapons()
 	weapon_types[FIRE_MODE_TORPEDO] = new/datum/ship_weapon/touhou/dir(src)
 	//weapon_types[FIRE_MODE_MAC] = new/datum/ship_weapon/immovable_rod(src)
 	weapon_types[FIRE_MODE_MAC] = new/datum/ship_weapon/star(src)
-	//The bigger the ship, the tankier the shields....
+	//AddComponent(/datum/component/interdiction)
 	AddComponent(/datum/component/overmap_shields, mass*600, mass*600, mass*15)

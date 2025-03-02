@@ -144,7 +144,9 @@
 	return TRUE
 
 /obj/structure/overmap/proc/fire_bullethell_directional(atom/target, ai_aim = FALSE, burst = 5, offset = 0, invert = 1, waitbetween = 0)
-	var/firing_angle = 160
+	if(burst != 1) // We don't wanna divide by zero
+		burst -= 1 // So if burst is 2 it will actually shoot two projectiles
+	var/firing_angle = 70
 	var/target_angle = overmap_angle(src, target)
 	var/proj_angle = target_angle - firing_angle/2
 	for(var/cycle = 1; cycle <= burst; cycle++)
@@ -153,8 +155,11 @@
 			return
 		if(QDELETED(target))
 			target = null
-		proj_angle += firing_angle/burst
 		fire_projectile(bullethell_projectile, target, lateral = FALSE, ai_aim = ai_aim, bullethell = TRUE, bullethell_angle = proj_angle)
+		proj_angle += firing_angle/burst
 		var/datum/ship_weapon/SW = weapon_types[FIRE_MODE_TORPEDO]
 		relay_to_nearby(pick(SW.overmap_firing_sounds))
+	var/datum/ship_weapon/SW = weapon_types[FIRE_MODE_TORPEDO]
+	fire_projectile(bullethell_projectile, target, lateral = FALSE, ai_aim = ai_aim, bullethell = TRUE, bullethell_angle = proj_angle)
+	relay_to_nearby(pick(SW.overmap_firing_sounds))
 	return TRUE

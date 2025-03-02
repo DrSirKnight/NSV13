@@ -401,6 +401,8 @@
 	overmap_select_sound = 'nsv13/sound/weapons/bsa_select.ogg'
 	ai_fire_delay = 32 SECONDS
 
+// Wizard weapons, these are all a bit wacky and not intended for use by normal ships
+
 /datum/ship_weapon/fireball
 	name = "fireball spell"
 	default_projectile_type = /obj/item/projectile/magic/overmap/fireball
@@ -409,8 +411,6 @@
 	range_modifier = 10
 	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
 	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
-	select_alert = "<span class='notice'>Primary mount selected.</span>"
-	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
 
 	weapon_class = WEAPON_CLASS_LIGHT
 	lateral = FALSE
@@ -423,8 +423,6 @@
 	range_modifier = 10
 	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
 	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
-	select_alert = "<span class='notice'>Primary mount selected.</span>"
-	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
 
 	weapon_class = WEAPON_CLASS_LIGHT
 	lateral = FALSE
@@ -436,8 +434,6 @@
 	range_modifier = 200
 	overmap_firing_sounds = list('nsv13/sound/weapons/bsa_fire.ogg')
 	overmap_select_sound = 'nsv13/sound/weapons/bsa_select.ogg'
-	select_alert = "<span class='notice'>Primary mount selected.</span>"
-	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
 
 	weapon_class = WEAPON_CLASS_HEAVY
 	lateral = FALSE
@@ -446,12 +442,10 @@
 	name = "bullet hell circle"
 	default_projectile_type = /obj/item/projectile/magic/overmap/arcane
 	burst_size = 5
-	fire_delay = 1 SECONDS
+	fire_delay = 1.5 SECONDS
 	range_modifier = 100
 	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
 	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
-	select_alert = "<span class='notice'>Primary mount selected.</span>"
-	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
 	weapon_class = WEAPON_CLASS_LIGHT
 	lateral = FALSE
 	special_fire_proc = /obj/structure/overmap/proc/fire_bullethell
@@ -460,6 +454,11 @@
 	name = "bullet hell cone"
 	special_fire_proc = /obj/structure/overmap/proc/fire_bullethell_directional
 	burst_size = 5
+	fire_delay = 2 SECONDS
+
+/datum/ship_weapon/touhou/dir/sides
+	burst_size = 2
+	fire_delay = 1 SECONDS
 
 /datum/ship_weapon/immovable_rod/valid_target(obj/structure/overmap/source, obj/structure/overmap/target, override_mass_check = FALSE)
 	if(!istype(source) || !istype(target))
@@ -472,12 +471,10 @@
 	name = "star"
 	default_projectile_type = /obj/item/projectile/magic/overmap/star
 	burst_size = 1
-	fire_delay = 30 SECONDS
+	fire_delay = 60 SECONDS
 	range_modifier = 200
 	overmap_select_sound = 'nsv13/sound/effects/ship/pdc_start.ogg'
 	overmap_firing_sounds = list('nsv13/sound/effects/fighters/autocannon.ogg')
-	select_alert = "<span class='notice'>Primary mount selected.</span>"
-	failure_alert = "<span class='warning'>DANGER: Primary mount not responding to fire command.</span>"
 	weapon_class = WEAPON_CLASS_HEAVY
 	lateral = FALSE
 	hail_messages = list("BEHOLD, MORTALS! I GIFT YOU A SUN!", "HYDROGEN TO HELIUM, SHIP TO DUST!", "A STAR FOR A STARSHIP? HOW FITTING!", "I PLUCKED THIS FROM THE SKIES JUST FOR YOU!", "THE SKY LOSES A STAR, AND YOU LOSE EVERYTHING!")

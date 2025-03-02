@@ -837,7 +837,6 @@ Adding tasks is easy! Just define a datum for it.
 			victorious_mob.client.give_award(/datum/award/achievement/misc/pirate_exterminator, victorious_mob)
 	return ..()
 
-
 //Boss battles.
 
 /datum/fleet/wizard/castle
@@ -846,10 +845,11 @@ Adding tasks is easy! Just define a datum for it.
 	fighter_types = list(/obj/structure/overmap/wizard/ai/lone)
 	destroyer_types = null
 	supply_types = null
-	battleship_types = list(/obj/structure/overmap/wizard/ai/castle)	//:)
+	size = 1
+	battleship_types = list(/obj/structure/overmap/wizard/ai/castle)
 	audio_cues = list()
 	allow_difficulty_scaling = FALSE
-	taunts = list("#!=?")
+	taunts = list("Ah, visitors! Do come in, stay a while... or at least long enough to be incinerated!", "A bold entrance! Pity you won’t get to make an exit.", "Oh dear, another lost traveler? Here, let me show you the way… to oblivion!")
 
 /datum/fleet/rubicon //Crossing the rubicon, are we?
 	name = "\proper Rubicon Crossing"

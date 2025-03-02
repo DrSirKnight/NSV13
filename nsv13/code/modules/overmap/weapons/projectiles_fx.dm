@@ -728,5 +728,39 @@ Misc projectile types, effects, think of this as the special FX file.
 	name = "arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 100
-	speed = 0.5
+	speed = 4
 
+/obj/item/projectile/magic/overmap/tesla
+	name = "lightning ball"
+	icon_state = "tesla_projectile"
+	damage = 100
+	speed = 4
+	range = 100
+
+	impact_effect_type = /obj/effect/temp_visual/nuke_impact
+	relay_projectile_type = /obj/item/projectile/bullet/delayed_prime/tesla
+
+	can_home = TRUE
+	homing_turn_speed = 2.5
+
+/obj/item/projectile/magic/overmap/tesla/spec_overmap_hit(obj/structure/overmap/target)
+	. = ..()
+	var/z_levels = target.occupying_levels
+	if(length(z_levels)) // If we have an internal z
+		for(var/datum/space_level/level in z_levels)
+			var/z_value = level.z_value
+			for(var/mob/living/M in GLOB.mob_living_list) // Let em burn \o/
+				if(M.z == z_value)
+					M.fire_stacks += 20
+					M.IgniteMob()
+
+/obj/item/projectile/bullet/delayed_prime/tesla
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "tesla_projectile"
+	name = "lightning ball"
+	penetration_fuze = 2
+
+/obj/item/projectile/bullet/delayed_prime/relayed_incendiary_torpedo/star/release_payload(atom/detonation_location)
+	var/turf/detonation_turf = detonation_location
+	empulse(detonation_turf, 5, 12)	//annoying emp.
+	explosion(detonation_turf, 0, 2, 6, 4)	//but only a light explosion.
