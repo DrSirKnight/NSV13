@@ -740,27 +740,31 @@ Misc projectile types, effects, think of this as the special FX file.
 	impact_effect_type = /obj/effect/temp_visual/nuke_impact
 	relay_projectile_type = /obj/item/projectile/bullet/delayed_prime/tesla
 
-	can_home = TRUE
-	homing_turn_speed = 2.5
-
-/obj/item/projectile/magic/overmap/tesla/spec_overmap_hit(obj/structure/overmap/target)
-	. = ..()
-	var/z_levels = target.occupying_levels
-	if(length(z_levels)) // If we have an internal z
-		for(var/datum/space_level/level in z_levels)
-			var/z_value = level.z_value
-			for(var/mob/living/M in GLOB.mob_living_list) // Let em burn \o/
-				if(M.z == z_value)
-					M.fire_stacks += 20
-					M.IgniteMob()
+	can_home = FALSE
 
 /obj/item/projectile/bullet/delayed_prime/tesla
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "tesla_projectile"
 	name = "lightning ball"
-	penetration_fuze = 2
+	penetration_fuze = 3
+	var/tesla_power = 20000
+	var/tesla_range = 15
+	var/tesla_flags = TESLA_MOB_DAMAGE | TESLA_MOB_STUN
 
-/obj/item/projectile/bullet/delayed_prime/relayed_incendiary_torpedo/star/release_payload(atom/detonation_location)
+/obj/item/projectile/bullet/delayed_prime/tesla/release_payload(atom/detonation_location)
 	var/turf/detonation_turf = detonation_location
-	empulse(detonation_turf, 5, 12)	//annoying emp.
-	explosion(detonation_turf, 0, 2, 6, 4)	//but only a light explosion.
+	empulse(detonation_turf, 5, 12)
+	explosion(detonation_turf, 0, 2, 6, 4)
+	for(var/mob/living/M in GLOB.mob_living_list)
+		if(detonation_turf.z == M.z && get_dist(detonation_turf, M) <= 12) // If next to hit we zap em
+			tesla_zap(src, tesla_range, tesla_power, tesla_flags)
+
+/obj/item/projectile/bullet/delayed_prime/tesla/is_valid_to_release(atom/newloc)
+	if(penetration_fuze > 0 || !isopenturf(newloc))
+		return FALSE
+	return TRUE
+
+/obj/item/projectile/bullet/delayed_prime/tesla/fuze_trigger_value(atom/target)
+	if(!isclosedturf(target))
+		return 0
+	return 1
